@@ -12,7 +12,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/login", { emailId, password });
+            const response = await axios.post("https://cinepulse-gpt.onrender.com/login", { emailId, password });
             if (response.data === "login Successfully")
             {
                 console.log("User Login Successfully");
