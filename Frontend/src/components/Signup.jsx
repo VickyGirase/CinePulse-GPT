@@ -18,7 +18,7 @@ const Signup = () => {
 
         try{
 
-            await axios.post("http://localhost:5000/signup",{
+            await axios.post("https://cinepulse-gpt.onrender.com/signup",{
                 firstName,emailId,password
             })
             .then(result => {
