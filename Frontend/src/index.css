@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* primary - #1F1E24
+   secondary - #6556CD */
+
+::-webkit-scrollbar{
+   width: 7px;
+   height: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+   border-radius: 10px;
+   background: #9e9ea6;
+}
+
+::-webkit-scrollbar-thumb:hover{
+   background: #6556CD;
+   border-radius: 10px;
+}
+
+select{
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   -ms-appearance:none;
+   outline: 0;
+   box-shadow: none;
+   border: 0;
+   background: #27272a;
+   background-image: none;
+   flex: 1;
+   padding: 0 0.5em;
+   color: #fff;
+   cursor: pointer;
+   font-size: 1em;
+   font-family: "Open Sans",sans-serif;
+
+}
+
+select::-ms-expand{
+   display: none;
+}
+
+.select {
+   position: relative;
+   display: flex;
+   width: 15em;
+   height: 3em;
+   line-height: 3;
+   overflow: hidden;
+   border-radius: 0.24em;
+   background: #27272a;
+
+
+
+}
+
+.select::after{
+   content: "\25BC";
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #27272a;
+   cursor: pointer;
+   pointer-events: none;
+   transition: 0.25s all ease;
+}
+
+.select::hover:after{
+   color:#6556cd;
+}
+
+body {
+   background: #262E2A;
+   overflow: hidden;
+ }
+ 
+ .loader {
+   animation: spin 1.5s linear alternate infinite;
+   background: #B73F41;
+   border-radius: 50%;
+   height: 140px;
+   width: 140px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .loader:before {
+   background: #B73F41;
+   border-radius: 50%;
+   content: '';
+   display: block;
+   height: 0.5em;
+   width: 0.5em;
+   z-index: 2;
+ }
+ 
+ .loader:after {
+   background: #262E2A;
+   border-radius: 50%;
+   box-shadow: 0em -2.60em #262E2A,
+     2.25em -4.02em #262E2A,
+     2.25em -1.25em #262E2A,
+     4.60em 0em #262E2A,
+     2.25em 1.25em #262E2A,
+     2.25em 4.02em #262E2A,
+     0em 2.60em #262E2A,
+     -2.25em 4.02em #262E2A,
+     -2.25em 1.25em #262E2A,
+     -4.60em 0em #262E2A,
+     -2.25em -1.25em #262E2A,
+     -2.25em -4.02em #262E2A;
+   content: '';
+   display: block;
+   height: 2em;
+   width: 2em;
+ }
+ 
+ .inner {
+   animation: load 1.5s linear alternate infinite;
+   border: solid 1px #B73F41;
+   border-radius: 50%;
+   height: 1.75em;
+   width: 1.75em;
+   z-index: 1;
+ }
+ 
+ .loader, .loader:before, .loader:after, .inner {
+   bottom: 0;
+   left: 0;
+   margin: auto;
+   position: absolute;
+   right: 0;
+   top: 0;
+ }
+ 
+ @keyframes load {
+   0% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #262E2A,
+       2.25em 1.25em #262E2A,
+       0em 2.60em #262E2A,
+       -2.25em 1.25em #262E2A,
+       -2.25em -1.25em #262E2A;
+   }
+   15% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #262E2A,
+       2.25em 1.25em #262E2A,
+       0em 2.60em #262E2A,
+       -2.25em 1.25em #262E2A,
+       -2.25em -1.25em #B73F41;
+   }
+   30% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #262E2A,
+       2.25em 1.25em #262E2A,
+       0em 2.60em #262E2A,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+   45% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #262E2A,
+       2.25em 1.25em #262E2A,
+       0em 2.60em #B73F41,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+   60% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #262E2A,
+       2.25em 1.25em #B73F41,
+       0em 2.60em #B73F41,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+   75% {
+     box-shadow: 0em -2.60em #262E2A,
+       2.25em -1.25em #B73F41,
+       2.25em 1.25em #B73F41,
+       0em 2.60em #B73F41,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+   90% {
+     box-shadow: 0em -2.60em #B73F41,
+       2.25em -1.25em #B73F41,
+       2.25em 1.25em #B73F41,
+       0em 2.60em #B73F41,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+   100% {
+     box-shadow: 0em -2.60em #B73F41,
+       2.25em -1.25em #B73F41,
+       2.25em 1.25em #B73F41,
+       0em 2.60em #B73F41,
+       -2.25em 1.25em #B73F41,
+       -2.25em -1.25em #B73F41;
+   }
+ }
+ 
+ @keyframes spin {
+   0% {
+     transform: rotate(0deg);
+   }
+   15% {
+     transform: rotate(60deg);
+   }
+   30% {
+     transform: rotate(120deg);
+   }
+   45% {
+     transform: rotate(180deg);
+   }
+   60% {
+     transform: rotate(240deg);
+   }
+   75% {
+     transform: rotate(300deg);
+   }
+   90% {
+     transform: rotate(360deg);
+   }
+   100% {
+     transform: rotate(0deg);
+   }
+ }
